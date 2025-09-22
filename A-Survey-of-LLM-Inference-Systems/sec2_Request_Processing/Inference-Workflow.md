@@ -214,13 +214,13 @@ $$
 * **Throughput (raw):**
 
 $$
-\mathrm{Throughput} = \frac{\# \text{tokens or requests processed}}{\text{second}}
+\mathrm{Throughput} = \frac{\text{\# tokens or requests processed}}{\text{second}}
 $$
 
 * **Goodput (quality-aware):**
 
 $$
-\mathrm{Goodput} = \frac{\# \text{requests completed within SLO}}{\text{second}}
+\mathrm{Goodput} = \frac{\text{\# requests completed within SLO}}{\text{second}}
 $$
 
 → *Goodput is the more realistic metric for multi-user LLM systems under latency targets.*
