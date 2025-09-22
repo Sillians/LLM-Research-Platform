@@ -107,21 +107,21 @@ $$
   * Attention involves $i-1$ cached keys/values
 * Cost per step:
 
-  $$
-  \mathcal{O}(i d)
-  $$
+$$
+\mathcal{O}(i d)
+$$
 
 * Total decode cost for $n-p$ output tokens:
 
-  $$
-  \mathcal{O}((n-p) \cdot n d)
-  $$
+$$
+\mathcal{O}((n-p) \cdot n d)
+$$
 
 * Memory footprint grows as:
 
-  $$
-  \mathcal{O}(L \cdot n \cdot d_k)
-  $$
+$$
+\mathcal{O}(L \cdot n \cdot d_k)
+$$
 
 
 
@@ -167,18 +167,18 @@ $$
   * Full-sequence computation for $p$ tokens.
   * Quadratic cost in $p$ due to attention:
 
-  $$
-  T_{\mathrm{prefill}} \sim \mathcal{O}(p^2 d)
-  $$
+$$
+T_{\mathrm{prefill}} \sim \mathcal{O}(p^2 d)
+$$
 
 * **Decode latency ($T_{\mathrm{decode}}$):**
 
   * Sequential generation of $n-p$ tokens.
   * Each step requires attention over all past tokens:
 
-  $$
-  T_{\mathrm{decode}} \sim \mathcal{O}((n-p) \cdot n d)
-  $$
+$$
+T_{\mathrm{decode}} \sim \mathcal{O}((n-p) \cdot n d)
+$$
 
 
 
@@ -188,17 +188,17 @@ Unlike batch inference, autoregressive models allow **token streaming**:
 
 * **Time to First Token (TTFT):**
 
-  $$
-  T_{\mathrm{TTFT}} \approx T_{\mathrm{prefill}}
-  $$
+$$
+T_{\mathrm{TTFT}} \approx T_{\mathrm{prefill}}
+$$
 
   Time from request submission until the first token is produced.
 
 * **Time Between Tokens (TBT):**
 
-  $$
-  T_{\mathrm{TBT}} \approx \frac{T_{\mathrm{decode}}}{n-p}
-  $$
+$$
+T_{\mathrm{TBT}} \approx \frac{T_{\mathrm{decode}}}{n-p}
+$$
 
   Average time to generate each new token.
 
@@ -213,15 +213,15 @@ Unlike batch inference, autoregressive models allow **token streaming**:
 
 * **Throughput (raw):**
 
-  $$
-  \mathrm{Throughput} = \frac{\# \text{tokens or requests processed}}{\text{second}}
-  $$
+$$
+\mathrm{Throughput} = \frac{\# \text{tokens or requests processed}}{\text{second}}
+$$
 
 * **Goodput (quality-aware):**
 
-  $$
-  \mathrm{Goodput} = \frac{\# \text{requests completed within SLO}}{\text{second}}
-  $$
+$$
+\mathrm{Goodput} = \frac{\# \text{requests completed within SLO}}{\text{second}}
+$$
 
 → *Goodput is the more realistic metric for multi-user LLM systems under latency targets.*
 
@@ -233,9 +233,9 @@ Since tasks vary widely, there is no single universal quality metric:
 
 * **Perplexity (general fluency):**
 
-  $$
-  \mathrm{PPL}(x_{1:n}) = \exp\left( - \frac{1}{n} \sum_{i=1}^{n} \log P(x_i \mid x_{1:i-1}) \right)
-  $$
+$$
+\mathrm{PPL}(x_{1:n}) = \exp\left( - \frac{1}{n} \sum_{i=1}^{n} \log P(x_i \mid x_{1:i-1}) \right)
+$$
 
 * **Task-specific metrics:**
 

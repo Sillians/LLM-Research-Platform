@@ -123,9 +123,9 @@ $$
 
 * Complexity per step:
 
-  $$
-  \mathcal{O}(td)
-  $$
+$$
+\mathcal{O}(td)
+$$
 
   vs full recompute: $\mathcal{O}(t^2 d)$.
 
@@ -161,18 +161,18 @@ In practice:
 * **KV Cache**:
   For $L$ layers, sequence length $t$, and head dimension $d_k$:
 
-  $$
-  \mathrm{Memory} = \mathcal{O}(L \cdot t \cdot d_k)
-  $$
+$$
+\mathrm{Memory} = \mathcal{O}(L \cdot t \cdot d_k)
+$$
 
 * **Delta Vector Storage**:
   At step $t+1$, only $\Delta h_{t+1} \in \mathbb{R}^d$ is computed and applied, avoiding reallocation of $h_{1:t}$.
 
 * Thus, **marginal memory per step** is:
 
-  $$
-  \mathcal{O}(d)
-  $$
+$$
+\mathcal{O}(d)
+$$
 
 instead of copying $\mathcal{O}(t d)$.
 

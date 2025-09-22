@@ -12,23 +12,24 @@
    * Input embeddings $X \in \mathbb{R}^{b \times m}$
    * Projected into:
 
-     $$
-     Q = XW_Q, \quad K = XW_K, \quad V = XW_V
-     $$
+$$
+Q = XW_Q, \quad K = XW_K, \quad V = XW_V
+$$
+
    * Dimensions:
      $Q, K, V \in \mathbb{R}^{b \times d_k}$ (with $d_k \approx m$)
 
 2. **Attention pattern:**
 
-   $$
-   A = QK^\top \in \mathbb{R}^{b \times b}
-   $$
+$$
+A = QK^\top \in \mathbb{R}^{b \times b}
+$$
 
 3. **Softmax + weighting:**
 
-   $$
-   A' = \mathrm{Softmax}(A), \quad U = A'V
-   $$
+$$
+A' = \mathrm{Softmax}(A), \quad U = A'V
+$$
 
    * $U$ = **Delta vectors** (context-updated representations).
 
@@ -53,27 +54,27 @@
 
 1. Split embedding dimension $m$ into $h$ heads:
 
-   $$
-   d_k = d_v = m / h
-   $$
+$$
+d_k = d_v = m / h
+$$
 
 2. For each head $i$:
 
-   $$
-   Q_i = XW_{Q_i}, \quad K_i = XW_{K_i}, \quad V_i = XW_{V_i}
-   $$
+$$
+Q_i = XW_{Q_i}, \quad K_i = XW_{K_i}, \quad V_i = XW_{V_i}
+$$
 
    Attention within head:
 
-   $$
-   H_i = \mathrm{Softmax}(Q_i K_i^\top) V_i
-   $$
+$$
+H_i = \mathrm{Softmax}(Q_i K_i^\top) V_i
+$$
 
 3. Concatenate results:
 
-   $$
-   U = \mathrm{Concat}(H_1, \ldots, H_h) W_o
-   $$
+$$
+U = \mathrm{Concat}(H_1, \ldots, H_h) W_o
+$$
 
    * $W_o \in \mathbb{R}^{m \times m}$ reprojects concatenated vectors.
 
