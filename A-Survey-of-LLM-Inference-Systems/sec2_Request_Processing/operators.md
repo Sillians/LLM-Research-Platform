@@ -702,7 +702,7 @@ Unlike **attention** (whose cost grows with context length), **sampling cost is 
 To improve **token throughput**, speculative decoding amortizes cost by using a **draft model**:
 
 1. **Drafting:**
-   Generate \$b\$ candidate tokens $\hat{x}*{i+1}, \dots, \hat{x}*{i+b}$ with a small LM.
+   Generate $b$ candidate tokens $\hat{x}*{i+1}, \dots, \hat{x}*{i+b}$ with a small LM.
 
 2. **Verification:**
    Run main model in parallel $b+1$ times:
