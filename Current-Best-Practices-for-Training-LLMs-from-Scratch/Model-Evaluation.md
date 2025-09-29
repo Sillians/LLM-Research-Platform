@@ -219,7 +219,7 @@ Task: sentiment analysis
 Tweet: "I hate it when my phone battery dies."
 Sentiment: Negative
 
-Tweet: "My day has been :smile"
+Tweet: "My day has been 👍 "
 Sentiment: Positive
 
 Tweet: "This is the link to the article"
