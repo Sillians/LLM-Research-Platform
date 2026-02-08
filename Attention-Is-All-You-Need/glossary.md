@@ -1,0 +1,26 @@
+# Attention Is All You Need - Glossary
+
+- **Attention**: A mechanism that computes weighted combinations of values based on query-key similarity.
+- **Self-attention**: Attention where queries, keys, and values all come from the same sequence.
+- **Multi-head attention**: Parallel attention heads that learn different relationship patterns and are concatenated.
+- **Query (Q)**: The vector that asks what information a token needs.
+- **Key (K)**: The vector that represents what a token offers.
+- **Value (V)**: The content vector that gets mixed based on attention weights.
+- **Scaled dot-product attention**: `softmax(Q K^T / sqrt(d_k)) V`, with scaling to stabilize gradients.
+- **Positional encoding**: Added vectors that encode token position without recurrence.
+- **Encoder**: The stack that turns input tokens into contextualized representations.
+- **Decoder**: The stack that generates output tokens using masked self-attention and encoder context.
+- **Masked self-attention**: Attention that prevents a position from attending to future tokens.
+- **Encoder-decoder attention**: Attention from decoder queries to encoder keys and values.
+- **Residual connection**: Adding a sub-layer's input to its output to stabilize training.
+- **Layer normalization**: Normalization that stabilizes activations within a layer.
+- **Feed-forward network (FFN)**: A two-layer MLP applied independently to each token.
+- **Sequence-to-sequence**: A model family that maps an input sequence to an output sequence.
+- **Autoregressive generation**: Producing tokens one at a time, conditioning on previous outputs.
+- **BPE (Byte-Pair Encoding)**: A subword tokenization method used in training.
+- **Label smoothing**: A regularization technique that softens hard target labels.
+- **d_model**: The main embedding and hidden dimension size.
+- **d_ff**: The hidden dimension of the FFN sub-layer.
+- **Head**: One attention unit in multi-head attention.
+- **Token**: A discrete unit of text input, often a subword.
+- **BLEU**: A translation quality metric based on n-gram overlap.
